@@ -120,6 +120,7 @@ public class undead implements character{
         if(attack*0.5-a.defense >= 0){
             a.health-=attack*0.5-a.defense;
         }else{
+            a.health = 0;
             System.out.println("Your attack is less than enemy defense.");
         }
     }//input เป็นcharacterเผ่าundeadโดยจะสร้างความเสียหายเป็น0.5เท่าของattack-ด้วยdefense outputไม่มี
@@ -130,6 +131,7 @@ public class undead implements character{
         if(attack-a.defense >= 0){
             a.health-=attack-a.defense;
         }else{
+            a.health = 0;
             System.out.println("Undead attack is less than Human defense.");
         }
     }//input เป็นcharacterเผ่าhumanโดยจะสร้างความเสียหายเป็นattack-ด้วยdefense outputไม่มี
