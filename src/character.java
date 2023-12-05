@@ -7,6 +7,8 @@ public interface character {
     public void equip(ward a);
     public void equip(sword a);
     public void unequip();
+    public void attack(human a);
+    public void attack(undead a);
 
 }
 

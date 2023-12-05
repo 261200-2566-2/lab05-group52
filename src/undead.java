@@ -78,6 +78,7 @@ public class undead implements character{
             weapon="sword";
             countweapon++;
             attack=charattack+attackfromweapon;
+            System.out.println("Equip already.");
         }else{
             System.out.println("Your hand is full.");
         }
@@ -92,6 +93,7 @@ public class undead implements character{
             weapon="ward";
             countweapon++;
             mana=charmana+manafromweapon;
+            System.out.println("Equip already.");
         }else{
             System.out.println("Your hand is full.");
         }
@@ -111,5 +113,25 @@ public class undead implements character{
             System.out.println("you don't have any weapon.");
         }
     }//เป็นfunctionที่ไม่มีinput ไม่มีoutput แต่เอาไว้เปลี่ยนค่าstatusกลับ
+
+    @Override
+    public void attack(undead a){
+        System.out.println(name+" attack "+a.name);
+        if(attack*0.5-a.defense >= 0){
+            a.health-=attack*0.5-a.defense;
+        }else{
+            System.out.println("Your attack is less than enemy defense.");
+        }
+    }//input เป็นcharacterเผ่าundeadโดยจะสร้างความเสียหายเป็น0.5เท่าของattack-ด้วยdefense outputไม่มี
+
+    @Override
+    public void attack(human a){
+        System.out.println(name+" attack "+a.name);
+        if(attack-a.defense >= 0){
+            a.health-=attack-a.defense;
+        }else{
+            System.out.println("Undead attack is less than Human defense.");
+        }
+    }//input เป็นcharacterเผ่าhumanโดยจะสร้างความเสียหายเป็นattack-ด้วยdefense outputไม่มี
 
 }
